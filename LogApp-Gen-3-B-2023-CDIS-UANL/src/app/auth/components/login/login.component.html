@@ -10,7 +10,7 @@
         <p class="message">Already registered? <a href="#">Sign In</a></p>
       </form> -->
     <form class="login-form" [formGroup]="formularioLog" (ngSubmit)="login()">
-      <input placeholder="ID" formControlName="id" required=""/>
+      <input placeholder="ID" formControlName="id" required/>
       <input type="password" placeholder="Password" formControlName="pass" required/>
       <button type="submit">login</button>
       <p class="message">Not registered? <a routerLink="/auth/register">Create an account</a></p>

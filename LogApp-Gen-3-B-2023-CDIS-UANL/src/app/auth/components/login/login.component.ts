@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,14 +26,32 @@ export class LoginComponent {
     // console.log(this.formularioLog.value);
     // console.log(this.formularioLog.valid);
     // this.router.navigateByUrl('/dashboard');
-
     if(this.formularioLog.valid){
       const{id,pass} = this.formularioLog.value;
-      this.router.navigateByUrl('/dashboard');
+      console.log(id);
+      console.log(pass);
 
-    }
-    else{
+      this.authService.login(id, pass)
+      .subscribe(res => {
+        if(res === true){
+          this.router.navigateByUrl('/dashboard');
+          this.toastr.success(id, 'ingreso correcto');
+        }
+        else {
+          console.log(res);
+          this.toastr.error(res, 'Error', {
+            timeOut: 4000,
+            progressAnimation: 'increasing'
+
+          });
+          
+        }
+      })
+
+    } else{
       this.toastr.error('Verifique sus datos', 'Error');
     }
   }
+
+
 }
