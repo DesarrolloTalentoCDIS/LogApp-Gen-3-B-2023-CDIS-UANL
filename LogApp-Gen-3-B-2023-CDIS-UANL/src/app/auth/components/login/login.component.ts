@@ -23,9 +23,6 @@ export class LoginComponent {
     private toastr: ToastrService) { }
 
   login(){
-    // console.log(this.formularioLog.value);
-    // console.log(this.formularioLog.valid);
-    // this.router.navigateByUrl('/dashboard');
     if(this.formularioLog.valid){
       const{id,pass} = this.formularioLog.value;
       console.log(id);
@@ -44,7 +41,7 @@ export class LoginComponent {
             progressAnimation: 'increasing'
 
           });
-          
+
         }
       })
 

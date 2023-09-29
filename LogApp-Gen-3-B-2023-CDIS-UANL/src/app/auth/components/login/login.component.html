@@ -1,15 +1,7 @@
 <!-- partial:index.partial.html -->
 <div class="login-page">
   <div class="form">
-    <!-- Register Component
-      <form class="register-form">
-        <input type="text" placeholder="name"/>
-        <input type="password" placeholder="password"/>
-        <input type="text" placeholder="email address"/>
-        <button>create</button>
-        <p class="message">Already registered? <a href="#">Sign In</a></p>
-      </form> -->
-    <form class="login-form" [formGroup]="formularioLog" (ngSubmit)="login()">
+    <form [formGroup]="formularioLog" (ngSubmit)="login()">
       <input placeholder="ID" formControlName="id" required/>
       <input type="password" placeholder="Password" formControlName="pass" required/>
       <button type="submit">login</button>
