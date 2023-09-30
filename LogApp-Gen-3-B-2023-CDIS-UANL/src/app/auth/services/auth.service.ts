@@ -52,7 +52,7 @@ export class AuthService {
           localStorage.setItem('token', res.token!);
           this._user = {
             id: res.id!,
-            usname: res.usname!
+            usname: res.usname! 
           }
         }
       }),
