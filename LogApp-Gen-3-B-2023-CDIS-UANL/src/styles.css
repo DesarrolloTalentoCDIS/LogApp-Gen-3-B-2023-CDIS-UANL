@@ -97,3 +97,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.success-text{
+  display: flex;
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+.btn-escape{
+  display:flex;
+  text-transform: uppercase;
+  color: #D83F31;
+  background: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  border: 2px solid #D83F31;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 10px auto;
+}
+
+.btn-escape:hover{
+  color: #fff;
+  background: #D83F31;
+  transition: 0.3s;
+}
+

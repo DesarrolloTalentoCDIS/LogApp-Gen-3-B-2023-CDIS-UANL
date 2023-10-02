@@ -44,7 +44,7 @@ export class AuthService {
     const URL = `${this.baseUrl}/auth/`;
     const body = {id, pass};
 
-    return this .http.post<AuthResponse>(URL, body)
+    return this.http.post<AuthResponse>(URL, body)
     .pipe(
       tap(res => {
         console.log(res);
@@ -52,7 +52,7 @@ export class AuthService {
           localStorage.setItem('token', res.token!);
           this._user = {
             id: res.id!,
-            usname: res.usname! 
+            usname: res.usname!
           }
         }
       }),
@@ -77,6 +77,10 @@ export class AuthService {
         return res.ok;
       }),
       catchError(err => of(false))
-    )
+    );
+  }
+
+  logout(){
+    localStorage.clear();
   }
 }
