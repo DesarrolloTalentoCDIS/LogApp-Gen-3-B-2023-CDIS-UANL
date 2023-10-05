@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { user } from '../interfaces/us-interface'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { tap, map, of, catchError, pipe, Observable } from 'rxjs';
+import { tap, map, of, catchError, Observable } from 'rxjs';
 import { AuthResponse } from '../interfaces/res-interface';
 
 @Injectable({
@@ -76,7 +76,7 @@ export class AuthService {
         }
         return res.ok;
       }),
-      catchError(err => of(false))
+      catchError(() => of(false))
     );
   }
 

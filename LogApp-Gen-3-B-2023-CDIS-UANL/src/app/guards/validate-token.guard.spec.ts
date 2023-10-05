@@ -3,7 +3,7 @@ import { CanActivateFn } from '@angular/router';
 import { validateTokenGuard } from './validate-token.guard';
 
 describe('validateTokenGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
+  const executeGuard: CanActivateFn = (...guardParameters) =>
       TestBed.runInInjectionContext(() => validateTokenGuard(...guardParameters));
 
   beforeEach(() => {

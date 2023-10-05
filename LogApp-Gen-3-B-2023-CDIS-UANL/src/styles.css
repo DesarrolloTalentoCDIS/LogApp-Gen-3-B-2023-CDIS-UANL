@@ -102,7 +102,7 @@ body {
   display: flex;
   font-size: 50px;
   font-weight: 500;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .btn-escape{
