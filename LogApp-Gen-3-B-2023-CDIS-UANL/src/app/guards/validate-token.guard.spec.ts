@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
-import { validateTokenGuard } from './validate-token.guard';
+import { ValidateTokenGuard } from './validate-token.guard';
 
 describe('validateTokenGuard', () => {
   const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => validateTokenGuard(...guardParameters));
+      TestBed.runInInjectionContext(() => ValidateTokenGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

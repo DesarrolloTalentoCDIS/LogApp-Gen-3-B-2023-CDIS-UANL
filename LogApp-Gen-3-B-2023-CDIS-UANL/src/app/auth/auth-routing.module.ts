@@ -10,19 +10,9 @@ const routes: Routes = [
     path: '',
     component: MainComponent,
     children: [
-    {
-      path: 'login', component: LoginComponent,
-      //loadChildren: () => import('PENDIENTE RUTA DEL MODULO').then(m => m.PENDIENTE NOMBRE DEL MODULO), pendienteeeee//
-      canActivate: [ValidateTokenGuard],
-      canLoad: [ValidateTokenGuard]
-    },
-    
-    {
-      path: 'register', component: RegisterComponent,
-    },
-    {
-      path: '**', redirectTo: 'login'
-    }
+    {path: 'login', component: LoginComponent,},
+    {path: 'register', component: RegisterComponent,},
+    {path: '**', redirectTo: 'login'}
     ]
   }
 ];

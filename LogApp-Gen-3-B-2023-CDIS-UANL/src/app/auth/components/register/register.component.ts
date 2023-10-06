@@ -25,13 +25,17 @@ export class RegisterComponent {
   ) { }
 
   register(){
+    // datos a mandar al backend
     const {usname, id, pass} = this.formularioregister.value;
+    // manda datos al endpoint register
     this.authService.register(usname, id, pass)
     .subscribe(res => {
+      // si la respuesta tiene éxito, manda al usuario al dashboard
       if(res === true){
         this.router.navigateByUrl('/dashboard');
         this.toastr.success(id+" "+usname, "Registro correcto");
       }
+      // si la respuesta muestra algun error, muestra error en un toast
       else{
         console.log(res);
         this.toastr.error(res, 'Error', {
