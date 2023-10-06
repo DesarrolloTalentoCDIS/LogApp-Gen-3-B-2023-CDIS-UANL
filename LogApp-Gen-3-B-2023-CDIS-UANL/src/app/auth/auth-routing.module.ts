@@ -16,7 +16,7 @@ const routes: Routes = [
       canActivate: [ValidateTokenGuard],
       canLoad: [ValidateTokenGuard]
     },
-    
+
     {
       path: 'register', component: RegisterComponent,
     },
