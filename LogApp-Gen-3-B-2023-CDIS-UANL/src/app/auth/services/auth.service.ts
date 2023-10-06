@@ -4,7 +4,6 @@ import { user } from '../interfaces/us-interface'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap, map, of, catchError, Observable } from 'rxjs';
 import { AuthResponse } from '../interfaces/res-interface';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -68,11 +67,12 @@ export class AuthService {
 
     return this.http.get<AuthResponse>(url, {headers})
     .pipe(
+      tap(res => console.log(res)),
       map(res => {
         localStorage.setItem('token' , res.token!);
         this._user = {
           id: res.id!,
-            usname: res.usname!
+          usname: res.usname!
         }
         return res.ok;
       }),
