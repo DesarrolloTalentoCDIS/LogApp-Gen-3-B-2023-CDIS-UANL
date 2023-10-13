@@ -1,1 +1,19 @@
-<p>carousel works!</p>
+<div class="dsc-carousel" [ngStyle]="{'min-height': alturaDefinitiva}">
+  <div class="dsc-carousel__btns">
+    <i class="material-icons" (click)="retroceder()">flecha_teclado_izquierda</i>
+    <i class="material-icons" (click)="establecerSiguiente()">flecha_teclado_derecha</i>
+  </div>
+  <div class="dsc-carousel__content">
+    <ng-container *ngFor="let parte of elementos">
+      <div class="dsc-carousel__content-item"
+           [ngStyle]="{'background-image': 'url(' + parte.image + ')', 'margin-left': 0}">
+        <h1>{{ parte.title?.first }} <span>{{ parte?.title?.second }}</span></h1>
+        <p>{{ parte.subtitle}}</p>
+      </div>
+    </ng-container>
+  </div>
+  <div class="dsc-carousel__step">
+    <div class="dsc-carousel__steps-step dsc-carousel__steps step {{ posActual }}"
+    *ngFor="let elemento of elementos" (click)="establecerPosActual(elemento.id)"></div>
+  </div>
+</div>

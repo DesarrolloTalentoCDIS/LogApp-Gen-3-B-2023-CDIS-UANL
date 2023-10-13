@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ProtectedAppContainerComponent} from "./protected-app-container/protected-app-container.component";
 
 const routes: Routes = [

@@ -1,0 +1,37 @@
+.dsc-carousel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.48);
+  }
+
+  &::content {
+    text-align: center;
+    width: 100%;
+    align-self: stretch;
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__content {
+    text-align: center;
+    width: 100%;
+    align-self: stretch;
+    display: flex;
+    overflow: hidden;
+
+    &-item {
+
+    }
+  }
+}

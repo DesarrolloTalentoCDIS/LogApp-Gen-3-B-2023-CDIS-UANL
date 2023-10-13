@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CAROUSEL_DATA_ITEMS} from "../utils/carousel.const";
 
 @Component({
   selector: 'app-protected-app-container',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class ProtectedAppContainerComponent {
 
+    protected readonly CAROUSEL_DATA_ITEMS = CAROUSEL_DATA_ITEMS;
 }
